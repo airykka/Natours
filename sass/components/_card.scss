@@ -1,34 +1,177 @@
 .card {
+  //FUNCTIONALITY
   perspective: 200rem;
-  -moz-perspective: 150rem;
+  -moz-perspective: 200rem;
   position: relative;
-  height: 50rem;
+  height: 52rem;
 
   &__side {
+    height: 52rem;
     background-color: orangered;
-    height: 50rem;
     transition: all 0.8s ease;
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     backface-visibility: hidden;
+    border-radius: 0.3rem;
+    box-shadow: 0 1.5rem 4rem rgba(#000, 0.15);
+    overflow: hidden;
 
     &--front {
       background-color: var(--color-white);
     }
 
     &--back {
-      background-color: green;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       transform: rotateY(180deg);
+
+      &-1 {
+        background: linear-gradient(
+          to right bottom,
+          var(--yellowLight),
+          var(--yellowdark)
+        );
+      }
+
+      &-2 {
+        background: linear-gradient(
+          to right bottom,
+          var(--light-accent),
+          var(--dark-acccent)
+        );
+      }
+
+      &-3 {
+        background: linear-gradient(
+          to right bottom,
+          var(--blueLight),
+          var(--bluedark)
+        );
+      }
     }
   }
 
   &:hover &__side--front {
-    transform: rotateY(180deg);
+    transform: rotateY(-180deg);
   }
 
   &:hover &__side--back {
     transform: rotateY(0deg);
+  }
+
+  //FRONT SIDE STYLING
+  &__picture {
+    background-size: cover;
+    height: 23rem;
+    background-blend-mode: screen;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+
+    &--1 {
+      background-image: linear-gradient(
+          to right bottom,
+          var(--yellowLight),
+          var(--yellowdark)
+        ),
+        url(../../img/nat-5.jpg);
+    }
+
+    &--2 {
+      background-image: linear-gradient(
+          to right bottom,
+          var(--light-accent),
+          var(--dark-acccent)
+        ),
+        url(../../img/nat-6.jpg);
+    }
+
+    &--3 {
+      background-image: linear-gradient(
+          to right bottom,
+          var(--blueLight),
+          var(--bluedark)
+        ),
+        url(../../img/nat-7.jpg);
+    }
+  }
+
+  &__heading {
+    font-size: 2.8rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    color: var(--color-white);
+    position: absolute;
+    text-align: right;
+    top: 12rem;
+    right: 2rem;
+    width: 75%;
+  }
+
+  &__heading-span {
+    padding: 1rem 1.5rem;
+    box-decoration-break: clone;
+
+    &--1 {
+      background-image: linear-gradient(
+        to right bottom,
+        rgba(#ffb900, 0.85),
+        rgba(#ff7730, 0.85)
+      );
+    }
+
+    &--2 {
+      background-image: linear-gradient(
+        to right bottom,
+        rgba(#7ed56f, 0.85),
+        rgba(#28b485, 0.85)
+      );
+    }
+
+    &--3 {
+      background-image: linear-gradient(
+        to right bottom,
+        rgba(#2998ff, 0.85),
+        rgba(#5643fa, 0.85)
+      );
+    }
+  }
+
+  &__details {
+    padding: 3rem;
+
+    ul {
+      list-style: none;
+      width: 80%;
+      margin: 0 auto;
+
+      li {
+        text-align: center;
+        font-size: 1.5rem;
+        padding: 1rem;
+
+        &:not(:last-child) {
+          border-bottom: 1px solid var(--color-greyLight);
+        }
+      }
+    }
+  }
+
+  //BACK-SIDE STYLING
+  &__price-box {
+    text-align: center;
+    color: var(--color-white);
+    margin-bottom: 8rem;
+  }
+
+  &__price-only {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+  }
+
+  &__price-value {
+    font-size: 6rem;
+    font-weight: 100;
   }
 }
