@@ -48,6 +48,15 @@
     }
   }
 
+  &.btn--green {
+    background-color: var(--primary-color);
+    color: var(--color-white);
+
+    &::after {
+      background-color: var(--primary-color);
+    }
+  }
+
   &.btn--animated {
     animation: moveInBottom 1s ease-out 0.75s backwards;
   }
