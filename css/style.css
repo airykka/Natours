@@ -773,6 +773,84 @@ body {
   opacity: 1;
 }
 
+.navigation__checkbox {
+  display: none;
+}
+
+.navigation__button {
+  background-color: var(--color-white);
+  height: 7rem;
+  width: 7rem;
+  position: fixed;
+  top: 6rem;
+  right: 6rem;
+  border-radius: 50%;
+  z-index: 1002;
+}
+
+.navigation__background {
+  height: 6rem;
+  width: 6rem;
+  border-radius: 50%;
+  position: fixed;
+  top: 6.5rem;
+  right: 6.5rem;
+  background-image: radial-gradient(var(--light-accent), var(--dark-acccent));
+  z-index: 1000;
+  -webkit-transform: scale(80);
+          transform: scale(80);
+}
+
+.navigation__nav {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 1001;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.navigation__list {
+  list-style: none;
+  text-align: center;
+}
+
+.navigation__item {
+  margin: 1rem;
+}
+
+.navigation__link:link, .navigation__link:visited {
+  font-size: 2.5rem;
+  display: inline-block;
+  padding: 1rem 2rem;
+  font-weight: 300;
+  color: var(--color-white);
+  text-decoration: none;
+  text-transform: uppercase;
+  background-image: linear-gradient(120deg, transparent 0%, transparent 50%, white 50%);
+  background-size: 230%;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.navigation__link:hover, .navigation__link:active {
+  background-position: 100%;
+  color: var(--primary-color);
+  -webkit-transform: translateX(1rem);
+          transform: translateX(1rem);
+}
+
 .header {
   height: 95vh;
   background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(85, 197, 122, 0.8)), to(rgba(40, 180, 133, 0.8))), url("../img/hero.jpg");
@@ -849,6 +927,7 @@ body {
   background-color: var(--color-greyDark-2);
   padding: 10rem 0;
   font-size: 1.4rem;
+  color: var(--colorGreyLight);
 }
 
 .footer__logo-box {
@@ -859,6 +938,12 @@ body {
 .footer__logo {
   width: 15rem;
   height: auto;
+}
+
+.footer__navigation {
+  border-top: 1px solid var(--color-greyDark);
+  padding-top: 2rem;
+  display: inline-block;
 }
 
 .footer__nav-items {
@@ -882,6 +967,21 @@ body {
 
 .footer__link:hover, .footer__link:active {
   color: var(--primary-color);
+}
+
+.footer__copyright {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.footer__copyright .actualtext {
+  border-top: 1px solid var(--color-greyDark);
+  padding-top: 2rem;
+  width: 90%;
 }
 
 .section-about {
